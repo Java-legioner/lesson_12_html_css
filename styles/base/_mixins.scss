@@ -1,0 +1,37 @@
+@mixin position ($p, $t, $l, $r, $b) {
+    position: $p;
+    top: $t;
+    left: $l;
+    right: $r;
+    bottom: $b;
+    
+}
+
+@mixin display ($d, $fd, $j, $ai) {
+    display: $d;
+    flex-direction: $fd;
+    justify-content: $j;
+    align-items: $ai;
+    
+}
+
+@mixin font ($f, $s, $w, $sz, $h){
+	font-family: $f;
+	font-style: $s;
+    font-weight: $w;
+    font-size: $sz;
+    line-height: $h;
+	
+}
+
+@mixin media($minmax, $media) {
+    @each $size, $resolution in $sizes {
+      @if $media == $size {
+        @media only screen and (#{$minmax}-width: $resolution) {
+          @content;
+        }
+      }
+    }
+  }
+
+	
